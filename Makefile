@@ -27,5 +27,7 @@ credentials: target
 certs:
 	@for f in $(DOMAINS); do ./generate.sh $${f}; done
 	
-
+install:
+	mkdir -p /etc/letsencrypt ;
+	cp -R target/certs/* /etc/letsencrypt ;
 
